@@ -16,7 +16,7 @@ const MainLayout: React.FC<{}> = ({ children }) => {
           <meta property="og:site_name" content="cript0ri" />
           <meta property="og:image" content="/images/chicken.png" />
         </Head>
-        <Container maxW="container.xl" pt={14} flex={1}>
+        <Container maxW="container.md" pt={14} flex={1}>
           {children}
         </Container>
         <Footer />

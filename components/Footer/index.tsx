@@ -12,7 +12,7 @@ const Footer: React.FC<{}> = () => {
       mt="10"
       as="footer"
     >
-      &copy; {new Date().getFullYear()} Juan Pablo Oriana. All Rights Reserved.
+      &copy; {new Date().getFullYear()} juan pablo oriana. all rights reserved.
       <a
         href="https://juanoriana-eta.vercel.app"
         rel="noreferrer"

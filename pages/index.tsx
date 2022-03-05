@@ -24,27 +24,27 @@ const Home: NextPage = () => {
         </Heading>
         <form>
           <VStack direction="row" spacing={4}>
-            <Text>Select the algorithm</Text>
+            <Text>select the algorithm</Text>
             <Select
               w={40}
               value={algorithm}
               onChange={(e) => setAlgorithm(e.target.value)}
             >
-              <option value="shift">Shift</option>
+              <option value="shift">shift</option>
             </Select>
-            <Text>Encode or decode?</Text>
+            <Text>encode or decode?</Text>
             <Select w={40} value={cod} onChange={(e) => setCod(e.target.value)}>
-              <option value="encode">Encode</option>
-              <option value="decode">Decode</option>
+              <option value="encode">encode</option>
+              <option value="decode">decode</option>
             </Select>
           </VStack>
         </form>
         <Button
-          colorScheme={"blue"}
+          colorScheme={"teal"}
           mt={8}
           onClick={() => router.push(`/algos/${algorithm}/${cod}`)}
         >
-          Go!
+          go!
         </Button>
       </Box>
     </Center>

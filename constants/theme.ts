@@ -29,6 +29,25 @@ const components = {
       textUnderlineOffset: 3,
     }),
   },
+  Container: {
+    variants: {
+      result: {
+        width: "100%",
+        background: "#2D2D30",
+        borderRadius: "7px",
+        px: 4,
+        py: 3,
+        fontSize: "lg",
+        maxWidth: "100%",
+        whiteSpace: "pre-line",
+      },
+    },
+  },
+  Textarea: {
+    baseStyle: () => ({
+      backgroundColor: "#2D2D30",
+    }),
+  },
 };
 
 const fonts = {

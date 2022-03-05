@@ -1,5 +1,11 @@
 import React from "react";
 import { NextPage } from "next";
-const ShiftEncode: NextPage = () => <div>Hola</div>;
+import SectionTitle from "../../../../components/SectionTitle";
+const ShiftDecode: NextPage = () => (
+  <div>
+    <SectionTitle name={"shift"} coding={"decode"} />
+    asdas Hola
+  </div>
+);
 
-export default ShiftEncode;
+export default ShiftDecode;
