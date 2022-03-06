@@ -11,10 +11,11 @@ const MainLayout: React.FC<{}> = ({ children }) => {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="description" content="My cryptography examples" />
           <meta name="author" content="Juan Pablo Oriana" />
+          <link rel="icon" href="/verified.png" />
           <title>cript0ri</title>
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content="cript0ri" />
-          <meta property="og:image" content="/images/chicken.png" />
+          <meta property="og:image" content="/verified.png" />
         </Head>
         <Container maxW="container.md" pt={14} flex={1}>
           {children}
