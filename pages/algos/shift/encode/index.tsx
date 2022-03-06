@@ -17,7 +17,7 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import SectionTitle from "../../../../components/SectionTitle";
-import { shifter } from "../../../../utils/algos";
+import { shifter_encode } from "../../../../utils/algos";
 
 const ShiftEncode: NextPage = () => {
   const [text, setText] = useState("");
@@ -60,7 +60,7 @@ const ShiftEncode: NextPage = () => {
               colorScheme={"teal"}
               px={10}
               py={2}
-              onClick={() => setEncodedText(shifter(text, shift))}
+              onClick={() => setEncodedText(shifter_encode(text, shift))}
             >
               encode
             </Button>

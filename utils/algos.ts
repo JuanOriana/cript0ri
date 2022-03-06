@@ -4,7 +4,7 @@ const END_MIN = "z".charCodeAt(0);
 const END_MAY = "Z".charCodeAt(0);
 const LETTER_COUNT = 26;
 
-export function shifter(baseText: string, shiftAmount: number) {
+export function shifter_encode(baseText: string, shiftAmount: number) {
   let result = "";
   let letterToShift = "";
   let charcode = 0;
@@ -18,6 +18,25 @@ export function shifter(baseText: string, shiftAmount: number) {
     } else if (charcode >= START_MAY && charcode <= END_MAY) {
       charcode += shiftAmount;
       if (charcode > END_MAY) charcode -= LETTER_COUNT;
+    }
+    result += String.fromCharCode(charcode);
+  }
+  return result;
+}
+
+export function shifter_decode(baseText: string, shiftAmount: number) {
+  let result = "";
+  let letterToShift = "";
+  let charcode = 0;
+  for (let i = 0; i < baseText.length; i++) {
+    letterToShift = baseText[i];
+    charcode = letterToShift.charCodeAt(0);
+    if (charcode >= START_MIN && charcode <= END_MIN) {
+      charcode -= shiftAmount;
+      if (charcode < START_MIN) charcode += LETTER_COUNT;
+    } else if (charcode >= START_MAY && charcode <= END_MAY) {
+      charcode -= shiftAmount;
+      if (charcode < START_MAY) charcode += LETTER_COUNT;
     }
     result += String.fromCharCode(charcode);
   }
