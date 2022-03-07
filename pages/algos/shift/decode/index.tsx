@@ -78,16 +78,16 @@ const ShiftDecode: NextPage = () => {
           {calculateAuto && (
             <Text opacity={0.7} colorScheme="cyan">
               I will attempt to guess what the original shift value was, if the
-              input text is long enough.
+              input text is long enough (only words for english text).
             </Text>
           )}
-          {/*<Checkbox*/}
-          {/*  colorScheme="teal"*/}
-          {/*  isChecked={calculateAuto}*/}
-          {/*  onChange={(e) => setCalulateAuto(e.target.checked)}*/}
-          {/*>*/}
-          {/*  I dont know*/}
-          {/*</Checkbox>*/}
+          <Checkbox
+            colorScheme="teal"
+            isChecked={calculateAuto}
+            onChange={(e) => setCalulateAuto(e.target.checked)}
+          >
+            I dont know
+          </Checkbox>
           <FormLabel mb={-2}>text to encode:</FormLabel>
           <Textarea
             placeholder=""
