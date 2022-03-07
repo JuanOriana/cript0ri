@@ -1,4 +1,7 @@
 import { ShiftDecodeEvaluation } from "../components/types";
+const checkWord = require("check-if-word"),
+  checker = checkWord("en");
+
 const START_MIN = "a".charCodeAt(0);
 const START_MAY = "A".charCodeAt(0);
 const END_MIN = "z".charCodeAt(0);
@@ -53,11 +56,11 @@ export async function shifter_decode_auto(
   for (let shift = 0; shift < 26; shift++) {
     decodedText = shifter_decode(baseText, shift);
     decodedTextWords = decodedText.split(/[^A-Za-z]/);
-    const response = await fetch(
-      "/api/dict?words=" + decodedTextWords.join(",")
-    );
-    const json = await response.json();
-    if (json.validCount / json.totalCount >= TOLERANCE) {
+    console.log("nieve");
+    const validWordRatio = getValidWordRatio(decodedTextWords);
+    console.log("sol");
+
+    if (validWordRatio >= TOLERANCE) {
       return {
         isDecodable: true,
         decodedText: decodedText,
@@ -67,4 +70,9 @@ export async function shifter_decode_auto(
   }
 
   return { isDecodable: false };
+}
+
+function getValidWordRatio(words: string[]): number {
+  const validWords = checker.getValidWords(words);
+  return validWords.length / words.length;
 }

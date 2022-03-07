@@ -81,13 +81,13 @@ const ShiftDecode: NextPage = () => {
               input text is long enough.
             </Text>
           )}
-          <Checkbox
-            colorScheme="teal"
-            isChecked={calculateAuto}
-            onChange={(e) => setCalulateAuto(e.target.checked)}
-          >
-            I dont know
-          </Checkbox>
+          {/*<Checkbox*/}
+          {/*  colorScheme="teal"*/}
+          {/*  isChecked={calculateAuto}*/}
+          {/*  onChange={(e) => setCalulateAuto(e.target.checked)}*/}
+          {/*>*/}
+          {/*  I dont know*/}
+          {/*</Checkbox>*/}
           <FormLabel mb={-2}>text to encode:</FormLabel>
           <Textarea
             placeholder=""
